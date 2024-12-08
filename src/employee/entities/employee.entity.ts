@@ -8,6 +8,7 @@ import {
   OneToOne,
 } from 'typeorm';
 import { ContactInfo } from './contact-info.entity';
+import { Task } from 'src/task/entities/task.entity';
 
 @Entity()
 export class Employee extends AbstractEntity<Employee> {
@@ -37,4 +38,7 @@ export class Employee extends AbstractEntity<Employee> {
 
   @OneToMany(() => Employee, (employee) => employee.manager)
   subordinates: Employee[];
+
+  @OneToMany(() => Task, (task) => task.employee, { cascade: true })
+  tasks: Task[];
 }
