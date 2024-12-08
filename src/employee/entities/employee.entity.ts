@@ -3,12 +3,15 @@ import {
   Column,
   Entity,
   JoinColumn,
+  JoinTable,
+  ManyToMany,
   ManyToOne,
   OneToMany,
   OneToOne,
 } from 'typeorm';
 import { ContactInfo } from './contact-info.entity';
 import { Task } from 'src/task/entities/task.entity';
+import { Meeting } from 'src/meeting/entities/meeting.entity';
 
 @Entity()
 export class Employee extends AbstractEntity<Employee> {
@@ -41,4 +44,11 @@ export class Employee extends AbstractEntity<Employee> {
 
   @OneToMany(() => Task, (task) => task.employee, { cascade: true })
   tasks: Task[];
+
+  @OneToMany(() => Meeting, (meeting) => meeting.owner)
+  ownedMeetings: Meeting[];
+
+  @ManyToMany(() => Meeting, (meeting) => meeting.attendees,  { cascade: true, onDelete: 'CASCADE' })
+  @JoinTable()
+  acceptedMeetings: Meeting[];
 }
