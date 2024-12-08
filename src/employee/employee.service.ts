@@ -66,7 +66,9 @@ export class EmployeeService {
       relations: {
         manager: true,
         subordinates: true,
-        tasks: true
+        tasks: true,
+        ownedMeetings: true,
+        acceptedMeetings: true
       },
     });
     if(!employee) throw new NotFoundException(ErrMsg.EmployeeNotFound);
