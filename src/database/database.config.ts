@@ -17,3 +17,16 @@ export const postgresDbConfig = new DataSource({
   migrations: ['migrations/**'],
   entities: ['dist/**/*.entity{.ts,.js}'],
 });
+
+export const mysqlDbConfig = new DataSource({
+  type: 'mysql',
+  host: configSrv.getOrThrow('MYSQL_HOST'),
+  port: configSrv.getOrThrow('MYSQL_PORT'),
+  database: configSrv.getOrThrow('MYSQL_DATABASE'),
+  username: configSrv.getOrThrow('MYSQL_USERNAME'),
+  password: configSrv.getOrThrow('MYSQL_PASSWORD'),
+  synchronize: configSrv.getOrThrow('MYSQL_SYNC'),
+  migrations: ['migrations/**'],
+  entities: ['dist/**/*.entity{.ts,.js}'],
+});
+

@@ -1,15 +1,15 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { postgresDbConfig } from './database.config';
+import { mysqlDbConfig, postgresDbConfig } from './database.config';
 
 @Module({
   imports: [
     TypeOrmModule.forRootAsync({
       useFactory: async () => {
         try {
-          await postgresDbConfig.initialize();
+          await mysqlDbConfig.initialize();
           console.log('connected');
-          return postgresDbConfig.options;
+          return mysqlDbConfig.options;
         } catch (error) {
           console.log('error');
           throw error;
