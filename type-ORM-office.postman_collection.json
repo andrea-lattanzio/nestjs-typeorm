@@ -1,0 +1,547 @@
+{
+	"info": {
+		"_postman_id": "e44db6bd-63f3-445f-bf4f-eb3f4349b062",
+		"name": "type-ORM-office",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26352840"
+	},
+	"item": [
+		{
+			"name": "Employee",
+			"item": [
+				{
+					"name": "Crete employee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Andrea Lattanzio\",\n    \"position\": \"developer\",\n    \"department\": \"IT\",\n    \"contactInfo\": {\n        \"phone\": \"+39 339 308 8617\",\n        \"email\": \"andrealattanziodeodona@gmail.com\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/employee",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"employee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all employee",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/employee",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"employee"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "department",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "position",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get employee",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/employee/7f6efb5a-7ad0-4959-a2ed-65582ac17780",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"employee",
+								"7f6efb5a-7ad0-4959-a2ed-65582ac17780"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update employee",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Mario Lattanzio\",\n    \"position\": \"Project manager\",\n    \"department\": \"IT\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/employee/3e6ef2c0-285b-41fe-95b3-37316c1fbda9",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"employee",
+								"3e6ef2c0-285b-41fe-95b3-37316c1fbda9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update manager",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"managerId\": \"aa1f48ab-05f4-4cb9-bd38-c57db5f3b762\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/employee/updatemanager/3e6ef2c0-285b-41fe-95b3-37316c1fbda9",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"employee",
+								"updatemanager",
+								"3e6ef2c0-285b-41fe-95b3-37316c1fbda9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update contact info",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\": \"+39 339 308 8617\",\n    \"email\": \"tosio@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/employee/updatecontactinfo/3e6ef2c0-285b-41fe-95b3-37316c1fbda9",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"employee",
+								"updatecontactinfo",
+								"3e6ef2c0-285b-41fe-95b3-37316c1fbda9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Employee",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/employee/3e6ef2c0-285b-41fe-95b3-37316c1fbda9",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"employee",
+								"3e6ef2c0-285b-41fe-95b3-37316c1fbda9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Task",
+			"item": [
+				{
+					"name": "Create task",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"dashboard\",\n    \"description\": \"dashboard con grafico\",\n    \"status\": \"Todo\",\n    \"priority\": \"Medium\",\n    \"dueDate\": \"2024-12-10T00:00:00.000Z\",\n    \"employeeId\": \"3e6ef2c0-285b-41fe-95b3-37316c1fbda9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/task",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"task"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all tasks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/task",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"task"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "priority",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get task with employee",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/task/2a564cfa-2435-4b57-9bed-45de70b285fb",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"task",
+								"2a564cfa-2435-4b57-9bed-45de70b285fb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update task",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"create a new login page\",\n    \"employeeId\": \"cd046821-7ebc-4a3c-8d43-529f5d19d6f6\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/task/2a564cfa-2435-4b57-9bed-45de70b285fb",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"task",
+								"2a564cfa-2435-4b57-9bed-45de70b285fb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete task",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/task/2a564cfa-2435-4b57-9bed-45de70b285fb",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"task",
+								"2a564cfa-2435-4b57-9bed-45de70b285fb"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Meeting",
+			"item": [
+				{
+					"name": "Create meeting",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Sprint overview\",\n    \"description\": \"Initial sprint overview\",\n    \"date\": \"2024-12-10\",\n    \"startTime\": \"2024-12-10T09:00:00Z\",\n    \"endTime\": \"2024-12-10T11:00:00Z\",\n    \"ownerId\": \"7f6efb5a-7ad0-4959-a2ed-65582ac17780\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/meeting",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"meeting"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all meetings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/meeting",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"meeting"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get meeting",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/meeting/b66a74a7-024f-44f2-a57e-a21f6c6a7d0e",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"meeting",
+								"b66a74a7-024f-44f2-a57e-a21f6c6a7d0e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update meeting",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Sprint retroSpective\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/meeting/f1a74b18-9290-4b53-91e0-60b642017522",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"meeting",
+								"f1a74b18-9290-4b53-91e0-60b642017522"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Attendees",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"attendeeIds\": [\n        \"39d2306b-205f-4666-ae2a-ae09b7bc4fab\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/meeting/addattendees/f1a74b18-9290-4b53-91e0-60b642017522",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"meeting",
+								"addattendees",
+								"f1a74b18-9290-4b53-91e0-60b642017522"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove attendees",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"attendeeIds\": [\n        \"39d2306b-205f-4666-ae2a-ae09b7bc4fab\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/meeting/removeattendees/f1a74b18-9290-4b53-91e0-60b642017522",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"meeting",
+								"removeattendees",
+								"f1a74b18-9290-4b53-91e0-60b642017522"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete meeting",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/meeting/3655726b-2d60-4bfa-b990-3c08dc67763e",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"meeting",
+								"3655726b-2d60-4bfa-b990-3c08dc67763e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
